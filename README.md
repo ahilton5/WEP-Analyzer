@@ -7,7 +7,7 @@ python3 givenscript.py -h
 ```
 
 
-# Required packages
+# Required python packages
 
 ```
 pandas
