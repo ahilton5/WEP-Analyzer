@@ -1,5 +1,6 @@
 import numpy as np
 import re
+import argparse
 
 
 def remove_nonnumeric(stri):
@@ -39,8 +40,11 @@ def find_ages_number(i,objs):
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('data_location', help='The path to the file containing the text data copied from city-data.com')
+    args = parser.parse_args()
     ### Read in the data  Data copied from city-data.com for provo neighboorhoods
-    with open("../city_data/city-data.txt") as f:
+    with open(args.data_location) as f:
         objs = f.readline().split(" ")
 
     ### The Different Fields ###
@@ -78,7 +82,7 @@ def main():
     ndata = ndata.reshape(datashape)
     ndata = ndata.astype(float)\
     ## Saving the Data
-    np.savetxt("../city_data/DataFormated.csv",ndata.T,delimiter=",",fmt='%.2f')
+    np.savetxt("provo_city_data/DataFormated.csv",ndata.T,delimiter=",",fmt='%.2f')
 
 
 if __name__ == "__main__":
