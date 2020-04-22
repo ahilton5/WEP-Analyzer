@@ -5,3 +5,13 @@ All Python scripts in this repository use the argparse library for parsing the c
 ```
 python3 givenscript.py -h
 ```
+
+
+# Required packages
+
+```
+pandas
+tqdm
+numpy
+matplotlib
+```
